@@ -1,1 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalyan Bhukya | Health Informatics & Data Analyst</title>
+  <meta
+    name="description"
+    content="Portfolio of Kalyan Bhukya, Health Informatics Analyst and Data & Financial Analyst skilled in SQL, Python, Power BI, Tableau, Databricks, Azure, AWS, and healthcare analytics."
+  />
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --surface:#ffffff;
+      --surface-2:#eff6ff;
+      --surface-3:#f1f5f9;
+      --text:#0f172a;
+      --muted:#475569;
+      --primary:#0f766e;
+      --primary-dark:#115e59;
+      --accent:#2563eb;
+      --accent-soft:#dbeafe;
+      --border:#e2e8f0;
+      --shadow:0 16px 40px rgba(15, 23, 42, 0.08);
+      --radius:20px;
+      --max-width:1160px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(92%, var(--max-width));
+      margin:0 auto;
+    }
+
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 0;
+      gap:20px;
+    }
+
+    .logo{
+      font-size:1.05rem;
+      font-weight:700;
+      color:var(--text);
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:22px;
+    }
+
+    .nav-links a{
+      font-size:0.95rem;
+      font-weight:700;
+      color:var(--muted);
+      transition:0.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--primary);
+    }
+
+    .hero{
+      padding:88px 0 76px;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.20), transparent 30%),
+        radial-gradient(circle at right, rgba(15,118,110,0.20), transparent 24%),
+        linear-gradient(135deg, #0f172a 0%, #134e4a 45%, #1d4ed8 100%);
+      color:#fff;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.18);
+      font-size:0.9rem;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:clamp(2.3rem, 5vw, 4rem);
+      line-height:1.1;
+      margin-bottom:12px;
+    }
+
+    .hero .subtitle{
+      font-size:1.15rem;
+      color:rgba(255,255,255,0.92);
+      margin-bottom:14px;
+      max-width:740px;
+    }
+
+    .hero .summary{
+      color:rgba(255,255,255,0.82);
+      max-width:760px;
+      margin-bottom:28px;
+      font-size:1rem;
+    }
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:24px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 22px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:0.95rem;
+      transition:0.25s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:#ffffff;
+      color:var(--primary-dark);
+      box-shadow:0 10px 24px rgba(0,0,0,0.14);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      background:transparent;
+      color:#ffffff;
+      border-color:rgba(255,255,255,0.32);
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px 24px;
+      color:rgba(255,255,255,0.86);
+      font-size:0.95rem;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:28px;
+      backdrop-filter:blur(12px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.20);
+    }
+
+    .hero-card h3{
+      margin-bottom:16px;
+      font-size:1.1rem;
+    }
+
+    .highlight-list{
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    .highlight-list li{
+      padding:13px 14px;
+      border-radius:14px;
+      background:rgba(255,255,255,0.08);
+      color:rgba(255,255,255,0.92);
+      font-size:0.96rem;
+    }
+
+    section{
+      padding:76px 0;
+    }
+
+    .section-title{
+      font-size:2rem;
+      margin-bottom:10px;
+    }
+
+    .section-text{
+      color:var(--muted);
+      max-width:800px;
+      margin-bottom:30px;
+    }
+
+    .about-grid,
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:22px;
+    }
+
+    .card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      margin-bottom:14px;
+      font-size:1.18rem;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
+    }
+
+    .stat{
+      background:var(--surface-2);
+      border:1px solid #bfdbfe;
+      border-radius:16px;
+      padding:18px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.5rem;
+      color:var(--accent);
+      margin-bottom:6px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .skills-grid,
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-top:20px;
+    }
+
+    .skill-card,
+    .project-card,
+    .timeline-item{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .skill-card h3,
+    .project-card h3,
+    .timeline-item h3{
+      font-size:1.06rem;
+      margin-bottom:14px;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .tag{
+      background:var(--surface-2);
+      color:var(--primary-dark);
+      border:1px solid #c7d2fe;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:0.9rem;
+      font-weight:700;
+    }
+
+    .timeline{
+      display:grid;
+      gap:18px;
+      margin-top:20px;
+    }
+
+    .timeline-meta,
+    .project-meta{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+
+    .timeline-meta span,
+    .project-badge{
+      font-size:0.86rem;
+      font-weight:700;
+      color:var(--primary-dark);
+      background:#dcfce7;
+      border:1px solid #bbf7d0;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    .timeline-item p,
+    .project-card p,
+    .timeline-item li,
+    .project-card li{
+      color:var(--muted);
+      font-size:0.96rem;
+    }
+
+    .timeline-item ul,
+    .project-card ul{
+      padding-left:18px;
+      margin-top:12px;
+    }
+
+    .timeline-item li,
+    .project-card li{
+      margin-bottom:8px;
+    }
+
+    .contact-links{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .contact-item{
+      display:block;
+      background:var(--surface-3);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px 16px;
+      font-weight:700;
+      color:var(--primary-dark);
+    }
+
+    .contact-item small{
+      display:block;
+      color:var(--muted);
+      font-weight:500;
+      margin-top:4px;
+      word-break:break-word;
+    }
+
+    footer{
+      background:#0f172a;
+      color:#cbd5e1;
+      text-align:center;
+      padding:24px 16px;
+      font-size:0.94rem;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .skills-grid,
+      .projects-grid{
+        grid-template-columns:1fr;
+      }
+
+      .nav-inner{
+        flex-direction:column;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero{
+        padding:68px 0 60px;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .section-title{
+        font-size:1.65rem;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">Kalyan Bhukya</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Open to Health Informatics, Data Analyst, BI, and Financial Analyst roles</div>
+        <h1>Kalyan Bhukya</h1>
+        <p class="subtitle">Health Informatics Analyst | Data & Financial Analyst | SQL | Python | Power BI | Tableau</p>
+        <p class="summary">
+          Results-driven analyst with 5+ years of experience across healthcare and financial domains,
+          building executive dashboards, predictive analytics solutions, scalable data models, and automated reporting workflows.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="mailto:kalyanb1917@gmail.com">Contact Me</a>
+          <a class="btn btn-primary" href="#">Download Resume</a>
+          <a class="btn btn-secondary" href="https://linkedin.com/in/kalyan-nayak-bhukya-8897b8250" target="_blank">LinkedIn</a>
+          <a class="btn btn-secondary" href="#contact">Hire Me</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Irving, Texas, USA</span>
+          <span>Healthcare + Financial Analytics</span>
+          <span>Azure • AWS • Databricks</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>What I bring</h3>
+        <ul class="highlight-list">
+          <li>Healthcare claims, population health, and CMS reporting analytics</li>
+          <li>Advanced SQL, Python, and BI dashboards for decision-ready insights</li>
+          <li>Predictive modeling, anomaly detection, and financial KPI reporting</li>
+          <li>Cross-functional delivery across clinical, finance, and operations teams</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-text">
+        I specialize in transforming raw healthcare and financial data into practical insights that leaders can act on.
+        My background spans population health, claims analytics, financial modeling, dashboard development, ETL workflows,
+        and data governance across enterprise environments.
+      </p>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>Professional Summary</h3>
+          <p>
+            I bring hands-on experience with SQL, Python, SAS, Power BI, Tableau, Databricks, Azure, AWS, and dimensional data modeling.
+            I have worked across Medicare, Medicaid, ACA Commercial, claims, encounter, and financial datasets, helping teams improve reporting accuracy,
+            automate manual workflows, and support strategic decision-making with reliable analytics.
+          </p>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>5+ Years</strong>
+            <span>Analytics, reporting, and data modeling experience</span>
+          </div>
+          <div class="stat">
+            <strong>40%</strong>
+            <span>Improvement in executive reporting accuracy</span>
+          </div>
+          <div class="stat">
+            <strong>500K+</strong>
+            <span>Healthcare claims and patient records reconciled</span>
+          </div>
+          <div class="stat">
+            <strong>35%</strong>
+            <span>Reduction in reporting turnaround and manual effort</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Core Skills</h2>
+      <p class="section-text">
+        My skill set blends analytics, BI reporting, data engineering, healthcare domain expertise, and stakeholder-facing problem solving.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Analytics & Programming</h3>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">SAS</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>BI & Reporting</h3>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">SSRS</span>
+            <span class="tag">IBM Cognos</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Power Query</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Data Engineering & Cloud</h3>
+          <div class="tags">
+            <span class="tag">Databricks</span>
+            <span class="tag">Azure Synapse</span>
+            <span class="tag">AWS Redshift</span>
+            <span class="tag">AWS Glue</span>
+            <span class="tag">SSIS</span>
+            <span class="tag">Informatica IICS</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Healthcare Domain</h3>
+          <div class="tags">
+            <span class="tag">Claims Data</span>
+            <span class="tag">Encounter Data</span>
+            <span class="tag">Medicare</span>
+            <span class="tag">Medicaid</span>
+            <span class="tag">CMS Reporting</span>
+            <span class="tag">HIPAA</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Data Modeling</h3>
+          <div class="tags">
+            <span class="tag">Star Schema</span>
+            <span class="tag">Snowflake Schema</span>
+            <span class="tag">Fact & Dimension</span>
+            <span class="tag">STM</span>
+            <span class="tag">Data Governance</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Business Strengths</h3>
+          <div class="tags">
+            <span class="tag">Financial Modeling</span>
+            <span class="tag">Predictive Analytics</span>
+            <span class="tag">Anomaly Detection</span>
+            <span class="tag">Executive Reporting</span>
+            <span class="tag">Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-text">
+        My experience includes healthcare analytics, population health reporting, enterprise financial reporting, BI development, ETL integration, and cross-functional project delivery.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Ascension Healthcare - Health Informatics / Data Analyst</h3>
+            <span>Oct 2024 - Present</span>
+          </div>
+          <p>Austin, USA</p>
+          <ul>
+            <li>Built Power BI dashboards with DAX, drilldowns, and KPI slicers for Medicare and Medicaid performance reporting, improving executive reporting accuracy by 40%.</li>
+            <li>Developed predictive analytics and financial models using SQL, Python, and SAS on claims and encounter datasets to support benchmarking and population health strategy.</li>
+            <li>Used SQL across Oracle, DB2, SQL Server, and AWS Redshift to identify anomalies and improve reporting performance by 30% for CMS-focused reporting.</li>
+            <li>Leveraged Databricks Delta Lake and automated data quality checks to reconcile 500K+ claims and patient records while supporting HIPAA-compliant analytics.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Accenture / PNC Bank - Data Analyst / Financial Analyst</h3>
+            <span>Apr 2021 - Jan 2023</span>
+          </div>
+          <p>Bangalore, India</p>
+          <ul>
+            <li>Developed financial models and predictive analytics using SQL, Python, and Excel to identify anomalies and benchmark financial indicators for leadership reporting.</li>
+            <li>Gathered business requirements, defined reporting scope, and improved standardized analytics workflows by 25% across enterprise financial reporting teams.</li>
+            <li>Designed SSIS ETL pipelines to integrate multi-source financial and transactional data into enterprise warehouses, increasing reporting data availability by 35%.</li>
+            <li>Built Tableau dashboards for revenue trends and operational KPIs, supporting finance leaders with decision-ready reports and presentations.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <h3>Capgemini / Mastercard - BI Developer / Financial Analyst</h3>
+            <span>Jun 2019 - Mar 2021</span>
+          </div>
+          <p>Hyderabad, India</p>
+          <ul>
+            <li>Created Tableau and Power BI dashboards for transaction revenue, payment volumes, chargeback trends, and executive KPI reporting, reducing monthly reporting turnaround by 35%.</li>
+            <li>Developed optimized SQL datasets and reporting tables for revenue analysis, merchant performance, and transaction insights, improving dashboard performance by 30%.</li>
+            <li>Built forecasting models using Python and Excel to project payment volumes and seasonal revenue trends, improving forecast accuracy by 18%.</li>
+            <li>Automated reconciliation, settlement, and financial reporting using Python and Excel, reducing manual effort by 25% and improving reporting accuracy.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-text">
+        These project-style highlights reflect the kinds of outcomes I deliver across healthcare and financial analytics environments.
+      </p>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-meta">
+            <h3>Population Health Reporting Dashboard</h3>
+            <span class="project-badge">Power BI + SQL</span>
+          </div>
+          <p>
+            Designed a healthcare analytics dashboard to monitor Medicare and Medicaid KPIs, claims trends, and operational performance for executive stakeholders.
+          </p>
+          <ul>
+            <li>Created DAX-based KPI reporting and drilldown views</li>
+            <li>Improved reporting accuracy and stakeholder visibility</li>
+            <li>Supported CMS-focused healthcare analytics workflows</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-meta">
+            <h3>Claims Anomaly Detection & Reconciliation</h3>
+            <span class="project-badge">Databricks + Python</span>
+          </div>
+          <p>
+            Implemented data validation and anomaly detection workflows on large healthcare claims and patient datasets to improve quality and compliance.
+          </p>
+          <ul>
+            <li>Reconciled 500K+ healthcare records</li>
+            <li>Automated validation checks for data quality</li>
+            <li>Improved downstream dashboard trust and accuracy</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-meta">
+            <h3>Financial KPI & Forecasting Suite</h3>
+            <span class="project-badge">Tableau + Python</span>
+          </div>
+          <p>
+            Built dashboarding and forecasting solutions to track revenue trends, payment volumes, and operational KPIs across financial datasets.
+          </p>
+          <ul>
+            <li>Developed forecasting models for finance planning</li>
+            <li>Automated recurring reconciliation and reporting</li>
+            <li>Reduced turnaround time and manual effort</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-text">
+        I’m open to opportunities in health informatics, data analytics, BI reporting, financial analytics, and business-facing data roles.
+      </p>
+
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Let’s Connect</h3>
+          <p>
+            If you are hiring for a Data Analyst, Health Informatics Analyst, BI Developer, or Financial Analyst role,
+            I’d be glad to connect and discuss how I can support reporting, analytics, and strategic decision-making.
+          </p>
+
+          <div class="contact-links">
+            <a class="contact-item" href="mailto:kalyanb1917@gmail.com">
+              Email
+              <small>kalyanb1917@gmail.com</small>
+            </a>
+            <a class="contact-item" href="tel:+19728770715">
+              Phone
+              <small>+1 972 877 0715</small>
+            </a>
+            <a class="contact-item" href="https://linkedin.com/in/kalyan-nayak-bhukya-8897b8250" target="_blank">
+              LinkedIn
+              <small>linkedin.com/in/kalyan-nayak-bhukya-8897b8250</small>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Quick Snapshot</h3>
+          <p><strong>Role Focus:</strong> Health Informatics Analyst / Data Analyst / Financial Analyst</p>
+          <p><strong>Education:</strong> MS in Information Technology, Indiana Wesleyan University</p>
+          <p><strong>Strengths:</strong> Claims analytics, executive dashboards, predictive modeling, ETL, data governance</p>
+          <p><strong>Tools:</strong> SQL, Python, SAS, Power BI, Tableau, Databricks, Azure, AWS</p>
+          <p><strong>Location:</strong> Irving, Texas, USA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Kalyan Bhukya. All rights reserved.</p>
+  </footer>
+</body>
+</html>
 
